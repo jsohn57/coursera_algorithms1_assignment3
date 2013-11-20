@@ -55,11 +55,11 @@ public class Point implements Comparable<Point> {
     	double xDiff = that.x-this.x;
     	double yDiff = that.y-this.y;
     	if(xDiff == 0 && yDiff == 0){
-    		return Double.MIN_VALUE;
+    		return Double.NEGATIVE_INFINITY;
     	}
     	else{
     		if(xDiff == 0){
-    			return Double.MAX_VALUE; // positive infinity
+    			return Double.POSITIVE_INFINITY; // positive infinity
     		}
     		else if(yDiff == 0){
     			return 0.0;

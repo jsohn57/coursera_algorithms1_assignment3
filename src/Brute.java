@@ -2,7 +2,7 @@
 public class Brute {
 
 	public static void main(String[] args) {
-		String fileName = "input6.txt";
+		String fileName = "input8.txt";
 		In fileStream = new In(fileName);
 		int N = fileStream.readInt();
 		
@@ -20,16 +20,16 @@ public class Brute {
 		
 		for(int i = 0; i < N; i++){
 			Point p0 = pArray[i];
-			for(int j = i+1; j < N; j++){
+			for(int j = 0; j < N; j++){
 				Point p1 = pArray[j];
 				double slope1 = p0.slopeTo(p1); 
-				for(int k = j+1; k < N; k++){
+				for(int k = 0; k < N; k++){
 					Point p2 = pArray[k]; 
 					double slope2 = p0.slopeTo(p2); 
-					for(int t = k+1; t < N; t++){
+					for(int t = 0; t < N; t++){
 						Point p3 = pArray[t];
 						double slope3 = p0.slopeTo(p3);
-						if((slope1 == slope2) && (slope2 == slope3)){
+						if((slope1 == slope2) && (slope2 == slope3) && (p0.compareTo(p1) < 0) && (p1.compareTo(p2) < 0) && (p2.compareTo(p3) < 0)){
 							StdOut.println(p0.toString() + " --> " + p1.toString() + " --> " + p2.toString() + " --> " + p3.toString()); 
 						}
 					}
